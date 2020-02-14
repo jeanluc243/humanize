@@ -1,3 +1,8 @@
+## [0.2.0] - 13 February 2020.
+
+* Add MIT Licence 
+
+* Documentation on README.md file
 
 ## [0.1.0] - 13 February 2020.
 

@@ -20,7 +20,7 @@ String ordinal(int value) {
       "$tempValue": "${value}st",
       // Ordinal format when value ends with 2, e.g. 82nd, except 12.
       "$tempValue": "${value}nd",
-      // Ordinal format when value ends with 3, e.g. 83th, except 13.
+      // Ordinal format when value ends with 3, e.g. 83rd, except 13.
       "$tempValue": "${value}rd",
       // Ordinal format when value ends with 4, e.g. 84th.
       "$tempValue": "${value}th",
