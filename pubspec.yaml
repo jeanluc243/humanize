@@ -1,8 +1,8 @@
 name: humanize
-description: A new Flutter package project.
-version: 0.0.1
-author:
-homepage:
+description: A package for translating numbers and dates into a human readable format.
+version: 0.1.0
+author: Jean Luc Kabulu
+homepage: https://github.com/Flutter-Heroes/humanize
 
 environment:
   sdk: ">=2.1.0 <3.0.0"
