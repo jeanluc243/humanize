@@ -1,6 +1,6 @@
 name: humanize
 description: A package for translating numbers and dates into a human readable format.
-version: 0.2.0
+version: 0.2.1
 homepage: https://github.com/jeanluc243/humanize
 
 environment:

@@ -1,3 +1,7 @@
+## [0.2.1] - 21 February 2020.
+
+* appropriate file
+
 ## [0.2.0] - 13 February 2020.
 
 * Add MIT Licence 
