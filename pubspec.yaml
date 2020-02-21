@@ -1,7 +1,7 @@
 name: humanize
 description: A package for translating numbers and dates into a human readable format.
 version: 0.2.0
-homepage: https://github.com/Flutter-Heroes/humanize
+homepage: https://github.com/jeanluc243/humanize
 
 environment:
   sdk: ">=2.1.0 <3.0.0"

@@ -77,4 +77,4 @@ compared to current timestamp return representing string.
 
 Please file feature requests and bugs at the [issue tracker][tracker].
 
-[tracker]: https://github.com/Flutter-Heroes/humanize/issues
+[tracker]: https://github.com/jeanluc243/humanize/issues
