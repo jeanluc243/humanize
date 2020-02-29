@@ -52,12 +52,24 @@ main(){
 }
 ```
 
-
-## TODO
-
 ### intComma
 Convert an integer to a string containing commas every three digits.
 For example, 3000 becomes '3,000' and 45000 becomes '45,000'.
+
+
+```dart
+
+import 'package:humanize/humanize.dart' as humanize;
+
+main(){
+    print(humanize.intComma(50000)); // 50,000
+    print(humanize.intComma(5000)); // 5,000
+    print(humanize.intComma(500)); // 500 for 1,2 or 3 number don't add the comma 😉
+      
+}
+```
+
+## TODO
 
 ### intWord
 Convert a large integer to a friendly text representation. Works best
