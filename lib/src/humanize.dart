@@ -43,6 +43,7 @@ String ordinal(int value) {
 /// Convert an integer to a string containing commas every three digits.
 /// For example, 3000 becomes '3,000' and 45000 becomes '45,000'.
 String intComma(int value) {
+
   return "";
 }
 
@@ -50,7 +51,14 @@ String intComma(int value) {
 /// for numbers over 1 million. For example, 1000000 becomes '1.0 million',
 /// 1200000 becomes '1.2 million' and '1200000000' becomes '1.2 billion'.
 String intWord(int value) {
-  return "";
+  String valueToString = '$value'
+
+  RegExp reg = new RegExp(r'(\d{1,3})(?=(\d{3})+(?!\d))');
+  Function mathFunc = (Match match) => '${match[1]}.';
+
+  String newValue = valueToString.replaceAllMapped(reg, mathFunc);
+
+  return '$newValue';
 }
 
 /// For numbers 1-9, return the number spelled out. Otherwise, return the
