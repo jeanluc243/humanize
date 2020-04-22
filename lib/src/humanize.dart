@@ -3,8 +3,7 @@
 String ordinal(int value) {
   assert(value != null, '[value] must not be null');
 
-  int tempValue;
-  Map templates;
+  List templates;
   String finalValue;
 
   List valueSpecial = [11, 12, 13];
@@ -12,30 +11,30 @@ String ordinal(int value) {
   if (valueSpecial.contains(value % 100)) {
     return "${value}th";
   } else {
-    tempValue = value % 10;
-    templates = {
+    templates = [
       // Ordinal format when value ends with 0, e.g. 80th
-      "$tempValue": "${value}th",
+      "${value}th",
       // Ordinal format when value ends with 1, e.g. 81st, except 11.
-      "$tempValue": "${value}st",
+      "${value}st",
       // Ordinal format when value ends with 2, e.g. 82nd, except 12.
-      "$tempValue": "${value}nd",
+      "${value}nd",
       // Ordinal format when value ends with 3, e.g. 83rd, except 13.
-      "$tempValue": "${value}rd",
+      "${value}rd",
       // Ordinal format when value ends with 4, e.g. 84th.
-      "$tempValue": "${value}th",
+      "${value}th",
       // Ordinal format when value ends with 5, e.g. 85th.
-      "$tempValue": "${value}th",
+      "${value}th",
       // Ordinal format when value ends with 6, e.g. 86th.
-      "$tempValue": "${value}th",
+      "${value}th",
       // Ordinal format when value ends with 7, e.g. 87th.
-      "$tempValue": "${value}th",
+      "${value}th",
       // Ordinal format when value ends with 8, e.g. 88th.
-      "$tempValue": "${value}th",
+      "${value}th",
       // Ordinal format when value ends with 9, e.g. 89th.
-      "$tempValue": "${value}th",
-    };
-    finalValue = templates["$tempValue"];
+      "${value}th",
+    ];
+    int valueMod10 = value % 10;
+    finalValue = templates[valueMod10];
   }
   return finalValue;
 }
