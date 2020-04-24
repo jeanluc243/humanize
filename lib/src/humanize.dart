@@ -66,9 +66,7 @@ String intWord(int value) {
 /// For numbers 1-9, return the number spelled out. Otherwise, return the
 /// number. This follows Associated Press style.
 String appNumber(int value) {
-  if (value < 0 && value > 10) {
-    return "$value";
-  }
+  
   List values = [
     "one",
     "two",
@@ -80,7 +78,12 @@ String appNumber(int value) {
     "eight",
     "nine"
   ];
-  return values[value-1];
+
+  if (value < 0 || value > 10) {
+    return "$value";
+  }else{
+      return values[value-1];
+  }
 }
 
 /// For date values that are tomorrow, today or yesterday compared to
