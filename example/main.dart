@@ -6,6 +6,6 @@ void main() {
   print(humanize.intComma(100));
   print(humanize.intComma(80010000));
   print(humanize.ordinal(2)); // 2nd
-  print(humanize.ordinal(1));
+  print(humanize.ordinal(11));
   print(humanize.ordinal(24)); // 24th
 }

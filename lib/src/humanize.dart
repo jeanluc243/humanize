@@ -60,7 +60,10 @@ String intComma(int value) {
 /// for numbers over 1 million. For example, 1000000 becomes '1.0 million',
 /// 1200000 becomes '1.2 million' and '1200000000' becomes '1.2 billion'.
 String intWord(int value) {
-  return "";
+  if (value < 1000000){
+    return "$value";
+  }
+  // TODO : Implement numbers Hight to 1M
 }
 
 /// For numbers 1-9, return the number spelled out. Otherwise, return the
@@ -98,3 +101,4 @@ String naturalDay(DateTime value) {
 String naturalTime(DateTime value) {
   return "";
 }
+ 

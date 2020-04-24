@@ -52,12 +52,22 @@ main(){
 }
 ```
 
-
-## TODO
-
 ### intComma
 Convert an integer to a string containing commas every three digits.
 For example, 3000 becomes '3,000' and 45000 becomes '45,000'.
+
+
+```dart
+
+import 'package:humanize/humanize.dart' as humanize;
+
+main(){
+    print(humanize.intComma(80010000)); //80,010,000
+}
+
+```
+
+## TODO
 
 ### intWord
 Convert a large integer to a friendly text representation. Works best
@@ -78,3 +88,8 @@ compared to current timestamp return representing string.
 Please file feature requests and bugs at the [issue tracker][tracker].
 
 [tracker]: https://github.com/jeanluc243/humanize/issues
+
+
+# V2.0 (dev Branch)
+
+# Adding differents Languages
