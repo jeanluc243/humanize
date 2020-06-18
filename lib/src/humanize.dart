@@ -3,41 +3,57 @@
 String ordinal(int value) {
   assert(value != null, '[value] must not be null');
 
-  List templates;
+  int tempValue;
+  dynamic templates;
   String finalValue;
 
   List valueSpecial = [11, 12, 13];
 
   if (valueSpecial.contains(value % 100)) {
     return "${value}th";
-  } else {
+  } else if (value.toString().length == 1) {
     templates = [
-      // Ordinal format when value ends with 0, e.g. 80th
-      "${value}th",
-      // Ordinal format when value ends with 1, e.g. 81st, except 11.
-      "${value}st",
-      // Ordinal format when value ends with 2, e.g. 82nd, except 12.
-      "${value}nd",
-      // Ordinal format when value ends with 3, e.g. 83rd, except 13.
-      "${value}rd",
-      // Ordinal format when value ends with 4, e.g. 84th.
-      "${value}th",
-      // Ordinal format when value ends with 5, e.g. 85th.
-      "${value}th",
-      // Ordinal format when value ends with 6, e.g. 86th.
-      "${value}th",
-      // Ordinal format when value ends with 7, e.g. 87th.
-      "${value}th",
-      // Ordinal format when value ends with 8, e.g. 88th.
-      "${value}th",
-      // Ordinal format when value ends with 9, e.g. 89th.
-      "${value}th",
+      "0",
+      "1st",
+      "2nd",
+      "3rd",
+      "4th",
+      "5th",
+      "6th",
+      "7th",
+      "8th",
+      "9th",
     ];
-    int valueMod10 = value % 10;
-    finalValue = templates[valueMod10];
+    finalValue = templates[value];
+  } else {
+    tempValue = value % 10;
+    templates = {
+      // Ordinal format when value ends with 0, e.g. 80th
+      "$tempValue": "${value}th",
+      // Ordinal format when value ends with 1, e.g. 81st, except 11.
+      "$tempValue": "${value}st",
+      // Ordinal format when value ends with 2, e.g. 82nd, except 12.
+      "$tempValue": "${value}nd",
+      // Ordinal format when value ends with 3, e.g. 83rd, except 13.
+      "$tempValue": "${value}rd",
+      // Ordinal format when value ends with 4, e.g. 84th.
+      "$tempValue": "${value}th",
+      // Ordinal format when value ends with 5, e.g. 85th.
+      "$tempValue": "${value}th",
+      // Ordinal format when value ends with 6, e.g. 86th.
+      "$tempValue": "${value}th",
+      // Ordinal format when value ends with 7, e.g. 87th.
+      "$tempValue": "${value}th",
+      // Ordinal format when value ends with 8, e.g. 88th.
+      "$tempValue": "${value}th",
+      // Ordinal format when value ends with 9, e.g. 89th.
+      "$tempValue": "${value}th",
+    };
+    finalValue = templates["$tempValue"];
   }
   return finalValue;
 }
+
 
 /// Convert an integer to a string containing commas every three digits.
 /// For example, 3000 becomes '3,000' and 45000 becomes '45,000'.
