@@ -1,3 +1,8 @@
+## [0.3.0] - 18 Jun 2020.
+
+* Fix Ordinal Translating 81 as 81th
+* Fix Ordinal Translating 1 as 1th and 2 as 2th
+
 ## [0.2.1] - 21 February 2020.
 
 * appropriate file
