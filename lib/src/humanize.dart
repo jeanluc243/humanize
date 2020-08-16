@@ -54,29 +54,28 @@ String ordinal(int value) {
   return finalValue;
 }
 
-
 /// Convert an integer to a string containing commas every three digits.
 /// For example, 3000 becomes '3,000' and 45000 becomes '45,000'.
 String intComma(int value) {
-   // Convert int value to a String one
-   String valueToString = '$value';
+  // Convert int value to a String one
+  String valueToString = '$value';
 
-   // Use RegExp function witch used to match strings or parts of strings
-   RegExp reg = new RegExp(r'(\d{1,3})(?=(\d{3})+(?!\d))');
-   Function mathFunc = (Match match) => '${match[1]},';
-   
-   // Store the result in a new String value
+  // Use RegExp function witch used to match strings or parts of strings
+  RegExp reg = new RegExp(r'(\d{1,3})(?=(\d{3})+(?!\d))');
+  Function mathFunc = (Match match) => '${match[1]},';
 
-   String newValue = valueToString.replaceAllMapped(reg, mathFunc);
+  // Store the result in a new String value
 
-   return '$newValue';
+  String newValue = valueToString.replaceAllMapped(reg, mathFunc);
+
+  return '$newValue';
 }
 
 /// Convert a large integer to a friendly text representation. Works best
 /// for numbers over 1 million. For example, 1000000 becomes '1.0 million',
 /// 1200000 becomes '1.2 million' and '1200000000' becomes '1.2 billion'.
 String intWord(int value) {
-  if (value < 1000000){
+  if (value < 1000000) {
     return "$value";
   }
   // TODO : Implement numbers Hight to 1M
@@ -85,7 +84,6 @@ String intWord(int value) {
 /// For numbers 1-9, return the number spelled out. Otherwise, return the
 /// number. This follows Associated Press style.
 String appNumber(int value) {
-  
   List values = [
     "one",
     "two",
@@ -100,8 +98,8 @@ String appNumber(int value) {
 
   if (value < 0 || value > 10) {
     return "$value";
-  }else{
-      return values[value-1];
+  } else {
+    return values[value - 1];
   }
 }
 
@@ -117,4 +115,77 @@ String naturalDay(DateTime value) {
 String naturalTime(DateTime value) {
   return "";
 }
- 
+
+/// adds "in" or "ago" to a natural duration phrase. eg: "in 5 days", "2 months ago".
+// this will be more useful when attempting internationalisation
+String _applyAdposition(String value, bool inPast) {
+  var modifier = inPast ? "ago" : "in";
+  var isSuffix = inPast ? true : false;
+  if (isSuffix)
+    return value + " " + modifier;
+  else
+    return modifier + " " + value;
+}
+
+/// Present date values as a string in natural duration units like weeks,
+/// months, and years relative to the current date.
+///
+/// Args:
+///   `applyAdposition` (bool) Add "in" and "ago" to outputs. Default: true.
+///   `applyAppNumber` (bool) Convert numbers to AP style. Default: false.
+///
+/// Returns:
+///   * By default, a date 14 days in the past would return "2 weeks ago".
+///   * By default, a date 40 days in the future would return "in 6 weeks".
+///   * By default, a date 700 days in the past would return "2 years ago".
+///
+/// NOTE: Supports only English duration and unit names currently.
+String naturalDuration(DateTime value,
+    {bool applyAdposition = true, bool applyAppNumber = false}) {
+  var duration = DateTime.now().difference(value);
+  var inPast = duration.inMilliseconds < 0;
+  var days = duration.inDays.abs();
+
+  // TODO: use naturalTime and naturalDay here
+  if (days < 1) return inPast ? "earlier today" : "today";
+  if (days < 2) return inPast ? "yesterday" : "tomorrow";
+
+  var weeks = (days / 7).round();
+  var months = (days / 30).round();
+  var years = (days / 365).round();
+  var phrase;
+
+  // up to 10 days, but not 1 week exactly
+  if (days < 11 && days != 7) {
+    phrase = "${applyAppNumber ? appNumber(days) : days} days";
+  }
+  // one week
+  else if (weeks == 1) {
+    phrase = "${applyAppNumber ? appNumber(weeks) : weeks} week";
+  }
+  // up to 8 weeks but not 4 weeks exactly
+  else if (weeks < 8 && weeks != 4) {
+    phrase = "${applyAppNumber ? appNumber(weeks) : weeks} weeks";
+  }
+  // 1 month
+  else if (weeks == 4) {
+    phrase = "${applyAppNumber ? appNumber(months) : months} month";
+  }
+  // multiple months
+  else if (years < 1) {
+    phrase = "${applyAppNumber ? appNumber(months) : months} months";
+  }
+  // 1 year
+  else if (years == 1) {
+    phrase = "${applyAppNumber ? appNumber(years) : years} year";
+  }
+  // multiple years
+  else if (years > 1) {
+    phrase = "${applyAppNumber ? appNumber(years) : years} years";
+  }
+
+  // TODO: throw an exception if phrase is still null?
+
+  // add "in" or "ago" if applicable, then return
+  return applyAdposition ? _applyAdposition(phrase, inPast) : phrase;
+}
