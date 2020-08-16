@@ -67,6 +67,37 @@ main(){
 
 ```
 
+### naturalDuration
+Present date values as a string in natural duration units like weeks,
+months, and years relative to the current date.
+
+For example:
+
+* By default, a date 14 days in the past would return "2 weeks ago".
+* By default, a date 40 days in the future would return "in 6 weeks".
+* By default, a date 700 days in the past would return "2 years ago".
+
+```dart
+
+import 'package:humanize/humanize.dart' as humanize;
+
+main(){
+    var date = DateTime.now().add(Duration(days: -14));
+    print(humanize.naturalDuration(date)); // 2 weeks ago
+    print(humanize.naturalDuration(date, 
+        applyAdposition: false, applyAppNumber: true)); // two weeks
+    
+    var date = DateTime.now().add(Duration(days: 40));
+    print(humanize.naturalDuration(date)); // in 6 weeks
+    
+    var date = DateTime.now().add(Duration(days: -10));
+    print(humanize.naturalDuration(date)); // 10 days ago
+
+    var date = DateTime.now().add(Duration(days: 700));
+    print(humanize.naturalDuration(date, applyAppNumber: true)); // in two years
+}
+
+```
 ## TODO
 
 ### intWord

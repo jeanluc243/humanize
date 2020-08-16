@@ -139,7 +139,7 @@ String _applyAdposition(String value, bool inPast) {
 ///   * By default, a date 40 days in the future would return "in 6 weeks".
 ///   * By default, a date 700 days in the past would return "2 years ago".
 ///
-/// NOTE: Supports only English duration and unit names currently.
+/// NOTE: Only supports US English currently.
 String naturalDuration(DateTime value,
     {bool applyAdposition = true, bool applyAppNumber = false}) {
   var duration = DateTime.now().difference(value);
