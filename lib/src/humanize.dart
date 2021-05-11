@@ -1,11 +1,11 @@
 /// Convert an integer to its ordinal as a string. 1 is '1st', 2 is '2nd',
 /// 3 is '3rd', etc. works for any integer.
-String ordinal(int value) {
+String? ordinal(int value) {
   assert(value != null, '[value] must not be null');
 
   int tempValue;
   dynamic templates;
-  String finalValue;
+  String? finalValue;
 
   List valueSpecial = [11, 12, 13];
 
@@ -67,7 +67,7 @@ String intComma(int value) {
    
    // Store the result in a new String value
 
-   String newValue = valueToString.replaceAllMapped(reg, mathFunc);
+   String newValue = valueToString.replaceAllMapped(reg, mathFunc as String Function(Match));
 
    return '$newValue';
 }
@@ -79,6 +79,7 @@ String intWord(int value) {
   if (value < 1000000){
     return "$value";
   }
+  return "$value";
   // TODO : Implement numbers Hight to 1M
 }
 

@@ -4,7 +4,7 @@ import 'package:humanize/humanize.dart' as humanize;
 
 void main() {
   test('Humanize', () {
-    expect(humanize.ordinal(2), "two");
+    expect(humanize.ordinal(2), "2nd");
     humanize.ordinal(1);
     
     // final calculator = Calculator();
