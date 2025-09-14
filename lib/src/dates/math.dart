@@ -1,4 +1,4 @@
-/// Date/time math helpers distinguishing calendar math from time math.
+// Date/time math helpers distinguishing calendar math from time math.
 
 int _daysInMonth(int year, int month) => DateTime(year, month + 1, 0).day;
 
@@ -33,4 +33,3 @@ extension DateTimeCalendarMath on DateTime {
   /// Calendar math: add years with end-of-month clamping.
   DateTime addCalendarYears(int years) => calendarAddYears(this, years);
 }
-

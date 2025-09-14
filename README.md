@@ -43,7 +43,7 @@ Humanize focuses on pragmatic, readable output for UI strings. It includes “na
 
 ```yaml
 dependencies:
-  humanize: ^1.1.0
+  humanize: ^1.2.0
 ```
 
 ```dart

@@ -1,5 +1,3 @@
-library humanize_i18n;
-
 import 'humanize.dart' as hz;
 
 /// Thin, locale-aware facade over humanize helpers.

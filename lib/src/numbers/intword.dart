@@ -129,7 +129,7 @@ String intword(num n,
     // Pluralize for FR when value != 1.0 (except 'mille' which is invariable)
     final isExactlyOne = formatted == '1' || formatted == '1,0' || formatted == '1,00';
     if (unit != 'mille' && !isExactlyOne) {
-      unit = unit.endsWith('s') ? unit : unit + 's';
+      unit = unit.endsWith('s') ? unit : '${unit}s';
     }
   }
   // EN: keep as singular form ("1.5 million")

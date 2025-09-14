@@ -1,4 +1,4 @@
-/// Typedefs and simple filter helpers.
+// Typedefs and simple filter helpers.
 
 typedef Filter<T> = T Function(T value);
 
