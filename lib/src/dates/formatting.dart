@@ -182,3 +182,4 @@ class LocalizedDateTime {
 extension DateTimeLocalized on DateTime {
   LocalizedDateTime asLocale(String code) => LocalizedDateTime(this, dateTimeLocaleFor(code), code);
 }
+import 'locale_string.dart';
