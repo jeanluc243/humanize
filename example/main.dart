@@ -1,8 +1,4 @@
-import 'package:humanize/src/numbers/apnumber.dart';
-import 'package:humanize/src/numbers/ordinal.dart';
-import 'package:humanize/src/numbers/intcomma.dart';
-import 'package:humanize/src/filesize/filesizeformat.dart';
-import 'package:humanize/src/dates/naturaltime.dart';
+import 'package:humanize/humanize.dart';
 
 void main() {
   print(apNumber(5)); // five

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="API docs for the toLocaleString method from the ToLocaleString extension, for the Dart programming language.">
+  <title>toLocaleString method - ToLocaleString extension - humanize library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../../static-assets/styles.css?v1">
+  <link rel="icon" href="../../static-assets/favicon.png?v1">
+  
+</head>
+
+<body data-base-href="../../" data-using-base-href="false" class="light-theme">
+<div id="overlay-under-drawer"></div>
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../../index.html">humanize</a></li>
+    <li><a href="../../humanize/">humanize.dart</a></li>
+    <li><a href="../../humanize/ToLocaleString.html">ToLocaleString</a></li>
+    <li class="self-crumb">toLocaleString method</li>
+  </ol>
+  <div class="self-name">toLocaleString</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <button class="toggle" id="theme-button" title="Toggle between light and dark mode" aria-label="Light and dark mode toggle">
+    <span id="dark-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      dark_mode
+    </span>
+    <span id="light-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      light_mode
+    </span>
+  </button>
+</header>
+<main>
+<div
+    id="dartdoc-main-content"
+    class="main-content"
+    data-above-sidebar="humanize&#47;ToLocaleString-extension-sidebar.html"
+    data-below-sidebar="">
+    <div>
+<h1><span class="kind-method">toLocaleString</span> method 
+</h1></div>
+
+    <section class="multi-line-signature">
+      
+<span class="returntype"><a href="https://api.dart.dev/stable/3.8.1/dart-core/String-class.html">String</a></span>
+<span class="name ">toLocaleString</span>(<wbr>[<ol class="parameter-list single-line"> <li><span class="parameter" id="toLocaleString-param-format"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.8.1/dart-core/Object-class.html">Object</a>?</span> <span class="parameter-name">format</span>, </span></li>
+<li><span class="parameter" id="toLocaleString-param-locale"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.8.1/dart-core/String-class.html">String</a></span> <span class="parameter-name">locale</span> = <span class="default-value">&#39;en&#39;</span></span></li>
+</ol>])
+
+      
+
+    </section>
+    
+<section class="desc markdown">
+  <p>Locale-aware formatting similar to Luxon's toLocaleString.</p>
+<ul>
+<li>If <code>format</code> is a <a href="../../humanize/HumanDateFormat-class.html">HumanDateFormat</a> preset, uses a sensible DateFormat chain.</li>
+<li>If <code>format</code> is a Map of options (month/day/year/hour/minute/second/weekday/timeZoneName),
+builds a pattern accordingly.</li>
+<li>If <code>format</code> is null, defaults to a short date (yMd).</li>
+</ul>
+</section>
+
+
+    
+<section class="summary source-code" id="source">
+  <h2><span>Implementation</span></h2>
+  <pre class="language-dart"><code class="language-dart">String toLocaleString([Object? format, String locale = &#39;en&#39;]) {
+  if (format is HumanDateFormat) {
+    switch (format._id) {
+      case &#39;DATE_SHORT&#39;:
+        return DateFormat.yMd(locale).format(this);
+      case &#39;DATE_MED&#39;:
+        return DateFormat.yMMMd(locale).format(this);
+      case &#39;DATE_FULL&#39;:
+        return DateFormat.yMMMMEEEEd(locale).format(this);
+      case &#39;TIME_SIMPLE&#39;:
+        return DateFormat.jm(locale).format(this);
+      case &#39;TIME_WITH_SECONDS&#39;:
+        return DateFormat.jms(locale).format(this);
+      case &#39;DATETIME_FULL&#39;:
+        return DateFormat.yMMMMd(locale).add_jm().add_d().format(this);
+    }
+  }
+  if (format is Map&lt;String, String&gt;) {
+    final pattern = _buildIntlPattern(format, locale);
+    return DateFormat(pattern, locale).format(this);
+  }
+  &#47;&#47; default
+  return DateFormat.yMd(locale).format(this);
+}</code></pre>
+</section>
+
+
+  </div> <!-- /.main-content -->
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+    <li><a href="../../index.html">humanize</a></li>
+    <li><a href="../../humanize/">humanize</a></li>
+    <li><a href="../../humanize/ToLocaleString.html">ToLocaleString</a></li>
+    <li class="self-crumb">toLocaleString method</li>
+</ol>
+
+    <h5>ToLocaleString extension on <a href="https://api.dart.dev/stable/3.8.1/dart-core/DateTime-class.html">DateTime</a></h5>
+    <div id="dartdoc-sidebar-left-content"></div>
+  </div><!--/.sidebar-offcanvas-->
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+</div><!--/.sidebar-offcanvas-->
+</main>
+<footer>
+  <span class="no-break">
+    humanize
+      0.5.0
+  </span>
+  
+</footer>
+
+
+<script src="../../static-assets/highlight.pack.js?v1"></script>
+<script src="../../static-assets/docs.dart.js"></script>
+
+</body>
+</html>
+

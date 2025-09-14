@@ -21,8 +21,13 @@ export 'src/numbers/ordinal.dart';
 
 export 'src/dates/naturaldelta.dart';
 export 'src/dates/naturaltime.dart';
+export 'src/dates/naturalday.dart';
+export 'src/dates/formatting.dart';
+export 'src/dates/locale_string.dart';
+export 'src/dates/math.dart';
 
 export 'src/lists/naturaljoin.dart';
 export 'src/lists/oxford_comma.dart';
 
 export 'src/filesize/filesizeformat.dart';
+export 'i18n.dart';
