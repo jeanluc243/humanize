@@ -1,0 +1,20 @@
+name: humanize
+description: >
+  A set of "humanize" filters inspired by Django, designed to add
+  a human touch to data (numbers, dates, texts) in Dart.
+version: 0.5.0
+
+repository: https://github.com/jeanluc243/humanize
+issue_tracker: https://github.com/jeanluc243/humanize/issues
+
+environment:
+  sdk: '>=3.4.0 <4.0.0'
+
+# Add regular dependencies here.
+dependencies:
+  # path: ^1.9.0
+  intl: ^0.20.2
+
+dev_dependencies:
+  lints: ^6.0.0
+  test: ^1.25.6
