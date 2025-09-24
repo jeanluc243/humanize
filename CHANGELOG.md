@@ -1,7 +1,7 @@
-### 1.2.2
-
+### 1.2.3
 - Fix minor Bugs
-
+### 1.2.2
+- Fix minor Bugs
 ### 1.2.1
 - Fix Bugs and modernize Docs
 

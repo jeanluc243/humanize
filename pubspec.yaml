@@ -1,7 +1,7 @@
 name: humanize
 description: >
   Humanize is a compact toolkit that makes UI strings feel natural. It bridges raw data and human-friendly phrasing with helpers for dates, numbers, lists, and text in English and French.
-version: 1.2.1
+version: 1.2.3
 
 repository: https://github.com/jeanluc243/humanize
 issue_tracker: https://github.com/jeanluc243/humanize/issues
