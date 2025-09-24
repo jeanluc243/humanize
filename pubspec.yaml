@@ -1,8 +1,7 @@
 name: humanize
 description: >
-  A set of "humanize" filters inspired by Django, designed to add
-  a human touch to data (numbers, dates, texts) in Dart.
-version: 1.2.0
+  Humanize is a compact toolkit that makes UI strings feel natural. It bridges raw data and human-friendly phrasing with helpers for dates, numbers, lists, and text in English and French.
+version: 1.2.1
 
 repository: https://github.com/jeanluc243/humanize
 issue_tracker: https://github.com/jeanluc243/humanize/issues
