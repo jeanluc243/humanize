@@ -1,3 +1,10 @@
+### 1.2.2
+
+- Fix minor Bugs
+
+### 1.2.1
+- Fix Bugs and modernize Docs
+
 ### 1.2.0
 
 - Fix Bugs

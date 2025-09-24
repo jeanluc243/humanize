@@ -1,10 +1,10 @@
 <p align="right">
-<a href="https://flutter.dev/docs/development/packages-and-plugins/favorites"><img src="assets/favorite.png" width="100" alt="build"></a>
+<a href="https://flutter.dev/docs/development/packages-and-plugins/favorites"><img src="https://raw.githubusercontent.com/jeanluc243/humanize/stable/assets/favorite.png" width="100" alt="build"></a>
 </p>
 
 
 <p align="center">
-<img src="assets/logo_humnanize.png" height="100" alt="Humanize" />
+<img src="https://raw.githubusercontent.com/jeanluc243/humanize/stable/assets/logo_humnanize.png" height="100" alt="Humanize" />
 
 </p>
 
@@ -13,7 +13,7 @@
   <!-- <a href="https://github.com/felangel/bloc/actions"><img src="https://github.com/jeanluc243/humanize/actions/workflows/main.yaml/badge.svg" alt="build"></a> -->
 <!-- 
   <a href="https://github.com/jeanluc243/humanize/actions"><img src="https://github.com/jeanluc243/humanize/workflows/CI/badge.svg" alt="CI"></a> -->
-<a href="https://github.com/jeanluc243/humaznie"><img src="https://img.shields.io/github/stars/jeanluc243/humanize.svg?style=flat&logo=github&colorB=deeppink&label=stars" alt="Star on Github"></a>
+<a href="https://github.com/jeanluc243/humanize"><img src="https://img.shields.io/github/stars/jeanluc243/humanize.svg?style=flat&logo=github&colorB=deeppink&label=stars" alt="Star on Github"></a>
 <a href="https://github.com/Solido/awesome-flutter#standard"><img src="https://img.shields.io/badge/awesome-flutter-blue.svg?longCache=true" alt="Awesome Flutter"></a>
 <a href="https://fluttersamples.com"><img 
 src="https://img.shields.io/badge/flutter-samples-teal.svg?longCache=true" alt="Flutter Samples"></a>
